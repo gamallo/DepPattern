@@ -21,18 +21,13 @@ Ruby (for the grammar compiler)
 
 HOW TO INSTALL
 
-(1)
-> tar  xzvf  DepPattern.tgz
-
-(2)
 > sh install-DepPattern.sh
 
-The parameter files required by tree-tagger are also installed.
 Pay attention: do not install the package in a directory whose name contain blank spaces!
 
 HOW TO USE
 
-dp.sh  <type_of_output> <lang> <file> [parser] [grammar]
+deppattern.sh  <type_of_output> <lang> <file> [parser] [grammar]
 
       type_of_output= -a (dependency analysis), -c (correct tagged text)
       language=gl, es, en, pt
