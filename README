@@ -2,23 +2,21 @@ DEP-PATTERN PARSERS AND COMPILER
 
 Author: 
 Pablo Gamallo Otero, Isaac González
-Grupo Gramatica do Espanhol
+Grupo ProLNat@GE, CiTIUS
 University of Santiago de Compostela
-Spain
+Galiza, Spain
 
 
 DESCRIPTION
-This software contains 5 default parsers for 5 languages: English, Spanish, Galician, French, and Portuguese. The parsers were implemented in PERL and are stored in the 'parsers' file. They were generated from test grammars, stored in the folder 'grammars'. 
+This software contains 4 default parsers for 4 languages: English, Spanish, Galician, and Portuguese. The parsers were implemented in PERL and are stored in the 'parsers' file. They were generated from test grammars, stored in the folder 'grammars'. 
 
 The software also contains a compiler (compi-beta.rb), implemented in Ruby, which generate parsers in PERL from DepPattern grammars. To write formal grammars using the formalism "DepPattern", please, look up the tutorial (docs/tutorialDepPattern.pdf).
+Besides, the software provides the PoS tagger 'CitiusTools", also developed by our group.
 
 
 REQUIREMENTS
-You must install Ruby 1.8, with the library libruby1.8. 
-Optionally, you may install Freeling (version >= 3.0).
-
-Freeling:
-http://garraf.epsevg.upc.es/freeling/
+GNU/LINUX (bash + perl)
+Ruby (for the grammar compiler) 
 
 
 HOW TO INSTALL
@@ -34,17 +32,14 @@ Pay attention: do not install the package in a directory whose name contain blan
 
 HOW TO USE
 
-dp.sh  <type_of_output> <tagger> <lang> <file> [parser] [grammar]
+dp.sh  <type_of_output> <lang> <file> [parser] [grammar]
 
       type_of_output= -a (dependency analysis), -c (correct tagged text)
-      tagger=freeling, treetagger
-      language=gl, es, en, pt, fr
+      language=gl, es, en, pt
       file=path of the file input
             parser=path of the parser, or name of the parser generated from grammar
             grammar=path of the file grammar
 
-
-Note: if you haven't installed Freeling, don't select 'freeling'.
 
 
 INPUT FILE
