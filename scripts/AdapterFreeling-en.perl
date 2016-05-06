@@ -102,7 +102,7 @@ while (<>) {
       
     }
 
-    elsif ( $lemma =~ /^that$/ && $tag =~ /^IN/ ) {
+    elsif ( ($lemma =~ /^that$/ || $lemma =~ /@/) && $tag =~ /^IN/ ) {
        $Exp{"lemma"} = $lemma;
        $Exp{"token"} = $token;
        $Exp{"tag"} =  "CONJ";

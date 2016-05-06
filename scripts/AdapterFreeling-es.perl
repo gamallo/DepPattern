@@ -32,11 +32,18 @@ while (<>) {
      if ($Pos==0) {
         $FoundFinal=0;
       }
-   ##correcÃ§oes ad hoc de problemas de etiquetaÃ§ao:
+   ##correcçoes ad hoc de problemas de etiquetaçao:
 
    if ( ($lemma =~ /^pol[oa](s?)$/) && ($tag =~ /^SP/) ) {
            $lemma = "por"
    }
+
+
+    ###Transformamos datas-W eliminando caracteres conflitivos: 
+  # if ($tag eq "W") {
+  #    $lemma =~ s/:/@/g;
+  #    $lemma =~ s/[\[\]]//g;
+  # } 
 
 
     #se temos um NP (nome proprio), colocar a forma no lema (para conservar a maiuscula)
@@ -50,20 +57,8 @@ while (<>) {
 
    ##tag conversion:
 
- ##dates
-   if ($tag eq "W") {
-       $lemma =~ s/[\[\]]//g;
-       $lemma =~ s/\:/\,/g;
-       (@tmp) = split ("", $tag);
-       $Exp{"lemma"} = $lemma;
-       $Exp{"token"} = $token;
-       $Exp{"tag"} =  "DATE";
-       $Exp{"number"} = "S";        
-   }
-
-
    ##pronouns:
-   elsif ($tag =~ /^P/) {
+   if ($tag =~ /^P/) {
        (@tmp) = split ("", $tag);
        $Exp{"lemma"} = $lemma;
        $Exp{"token"} = $token;
@@ -72,10 +67,37 @@ while (<>) {
        $Exp{"person"} = $tmp[2];
        $Exp{"gender"} = $tmp[3];
        $Exp{"number"} = $tmp[4];
-       $Exp{"case"} = $tmp[5];    
-       $Exp{"possessor"} = $tmp[6];    
-       $Exp{"politeness"} = $tmp[7];    
+        if (defined $tmp[5]) {
+         $Exp{"case"} = $tmp[5];
+       }  
+       else {
+         $Exp{"case"} = 0
+       }  
+       if (defined $tmp[6]) {
+         $Exp{"possessor"} = $tmp[6];
+       } 
+       else {
+         $Exp{"possessor"} = 0
+       }   
+       if (defined $tmp[7]) {  
+         $Exp{"politeness"} = $tmp[7];    
+       }
+       else {
+         $Exp{"politeness"} = 0
+       }  
+
     }
+
+    ##dates
+   elsif ($tag eq "W") {
+       $lemma =~ s/[\[\]]//g;
+       $lemma =~ s/\:/\,/g;
+       (@tmp) = split ("", $tag);
+       $Exp{"lemma"} = $token;
+       $Exp{"token"} = $token;
+       $Exp{"tag"} =  "DATE";
+       $Exp{"number"} = "S";        
+   }
 
      ##conjunctions:
     elsif ($tag =~ /^C/) {
@@ -107,7 +129,9 @@ while (<>) {
        $Exp{"number"} = "P";
        $Exp{"person"} = 0;
        $Exp{"gender"} = 0;
-      # $Exp{"type"} = $tmp[1];       
+      # $Exp{"type"} = $tmp[1];
+         
+       
    }
 
    elsif ($tag =~ /^A/) {
@@ -219,7 +243,7 @@ while (<>) {
       $Exp{"tag"} =  $tag;
      }
 
-   ##Colocar a posiÃ§ao em todos:
+   ##Colocar a posiçao em todos:
      if  ($tag !~ /^Fp$|^Fit$|^Fat$/)  {
        $Exp{"pos"} =  $Pos;
        $Pos++; 
@@ -244,4 +268,4 @@ while (<>) {
 }
 
 
-##as conjunÃ§oes seguem a ser CS (subord) e CC (coordenada)
+##as conjunçoes seguem a ser CS (subord) e CC (coordenada)

@@ -21,6 +21,9 @@ Ruby (for the grammar compiler)
 
 HOW TO INSTALL
 
+(1)
+> git clone https://github.com/gamallo/DepPattern.git
+(2)
 > sh install-DepPattern.sh
 
 Pay attention: do not install the package in a directory whose name contain blank spaces!

@@ -15,7 +15,10 @@ echo 'Path variables modified in tagging scripts.'
 chmod 0755 deppattern.sh
 chmod 0755 scripts/*
 chmod 0755 parsers/*
-chmod 0755 CitiusTagger/scripts/*
+chmod 0755 CitiusTagger/es/*
+chmod 0755 CitiusTagger/en/*
+chmod 0755 CitiusTagger/pt/*
+chmod 0755 CitiusTagger/gl/*
 chmod 0755 CitiusTagger/*sh
 
 echo ''
