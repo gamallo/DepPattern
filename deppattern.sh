@@ -16,7 +16,7 @@
 # Config
 ############################
 
-DEPPATTERN_DIR="/home/gamallo/DepPattern/devel/DepPattern"
+DEPPATTERN_DIR="./DepPattern"
 PROGS=$DEPPATTERN_DIR"/scripts"
 DIRPARSER=$DEPPATTERN_DIR"/parsers"
 
@@ -28,7 +28,7 @@ DIRPARSER=$DEPPATTERN_DIR"/parsers"
 
 help()
 {
-  echo "Syntax: dp.sh  <type_of_output> <lang> <file> [parser] [grammar]
+  echo "Syntax: deppattern.sh  <type_of_output> <lang> <file> [parser] [grammar]
       
       type_of_output= -a (dependency analysis), -fa (full dependency analysis) -c (correct tagged text)
       language=gl, es, en, pt
