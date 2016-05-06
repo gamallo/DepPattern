@@ -1,0 +1,42 @@
+CitiusTool: PoS-Tagger an NERC
+
+Author:
+Pablo Gamallo
+ProLNat Group
+University of Santiago de Compostela
+Galiza, Spain
+
+################ WORK IN PROGRESS!!!!! ###########################
+
+
+REQUIREMENTS
+Perl and bash interpreters 
+Optionally, you may install Freeling (>= 3.0).
+
+Freeling:
+http://garraf.epsevg.upc.es/freeling/
+
+
+HOW TO INSTALL
+> tar  xzvf  CitiusTool.tar.gz
+> sh install-citiustool.sh
+
+Pay attention: do not install the package in a directory whose name contain blank spaces!
+
+HOW TO USE
+nec.sh <lang> <file>
+
+      language=pt, es, en, gl
+      file=path of the input file
+
+
+INPUT FILE
+
+The input file must be in plain text format. 
+File codification must be UTF-8.
+
+
+EXAMPLE OF USE
+
+./nec.sh pt test/pt.txt
+
