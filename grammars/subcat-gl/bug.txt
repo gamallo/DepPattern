@@ -1,8 +1,0 @@
-Conjunção de atributos, sendo um novo atributo (add). 
-O novo sempre é colocado em primeira posiçao dentro do feature structure. 
-Mas o sistema ordena os atributos do pattern por ordem alfabética. Se o novo atributo aparece depois por ordem alfabética (lemma - nomin), então problema!!
-
-TermR: PRP<lemma:de&nomin:yes> NOUNSINGLE|PRO<type:D|P|I|X>
-
-Solução ad hoc: nomear os novos atributos com nomes que começem por 'a'.
-
