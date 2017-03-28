@@ -16,7 +16,7 @@
 # Config
 ############################
 
-DEPPATTERN_DIR="/home/gamallo/DepPattern/devel/DepPattern"
+DEPPATTERN_DIR="./DepPattern"
 PROGS=$DEPPATTERN_DIR"/scripts"
 DIRPARSER=$DEPPATTERN_DIR"/parsers"
 
