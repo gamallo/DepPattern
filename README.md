@@ -76,7 +76,7 @@ Agr: number
 DobjR:  VERB [ADV]* NOUN
 %
 ```
-##### END GRAMMAR #####
+
 
 Look up the tutorial stored in the doc directory.
 
