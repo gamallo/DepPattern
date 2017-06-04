@@ -1,14 +1,14 @@
 DEP-PATTERN PARSERS AND COMPILER
 
 Author: 
-Pablo Gamallo Otero, Isaac González
+Pablo Gamallo Otero, Isaac González, Marcos Garcia
 Grupo ProLNat@GE, CiTIUS
 University of Santiago de Compostela
-Galiza, Spain
+Galiza
 
 
 DESCRIPTION
-This software contains 4 default parsers for 4 languages: English, Spanish, Galician, and Portuguese. The parsers were implemented in PERL and are stored in the 'parsers' file. They were generated from test grammars, stored in the folder 'grammars'. 
+This software contains 4 default parsers for 4 languages (English, Spanish, Galician, and Portuguese), as well as MetaRomance, a multilingual parser suited for Romance langaguages. The parsers were implemented in PERL and are stored in the 'parsers' file. They were generated from test grammars, stored in the folder 'grammars'. 
 
 The software also contains a compiler (compi-beta.rb), implemented in Ruby, which generate parsers in PERL from DepPattern grammars. To write formal grammars using the formalism "DepPattern", please, look up the tutorial (docs/tutorialDepPattern.pdf).
 Besides, the software provides the PoS tagger 'CitiusTools", also developed by our group.
@@ -35,13 +35,21 @@ deppattern.sh  <type_of_output> <lang> <file> [parser] [grammar]
       type_of_output= -a (dependency analysis), -c (correct tagged text)
       language=gl, es, en, pt
       file=path of the file input
-            parser=path of the parser, or name of the parser generated from grammar
+            parser=path of the parser, or name of the parser generated from grammar (i.e. metaromance)
             grammar=path of the file grammar
 
 
 
-INPUT FILE
+MetaRomance
+One of the parsers provided by the package is MetaRomance, made of Universal Dependencies for Romance languages, and one of the systems that participated at CoNLL-2017 Shared Task on multilingual dependency parsing. If the input text is in Portuguese, the command to run MetaRomance would be the following:
 
+\.deppattern.sh  -a  pt  ./tests/test-pt  metaromance
+
+More information in:
+Garcia, Marcos and Pablo Gamallo (2017) "A rule-based system for cross-lingual parsing of Romance languages with Universal Dependencies", ConLL-2017, Vancouver, Canada.
+
+
+INPUT FILE
 The input file must be in plain text format, and codified in UTF8.
 
 
@@ -109,6 +117,7 @@ Lin, D., 1998. Dependency-based Evaluation of MINIPAR. In Proceedings of the Wor
 This format was adopted by the evaluation tasks defined in CoNLL.
 
 To get this ouput format file, you have to run ./scripts/saidaCoNLL.perl taking as input the output of 'dp.sh -a'. 
+
 
 
 EXTENSIONS

@@ -31,9 +31,9 @@ help()
   echo "Syntax: deppattern.sh  <type_of_output> <lang> <file> [parser] [grammar]
       
       type_of_output= -a (dependency analysis), -fa (full dependency analysis) -c (correct tagged text)
-      language=gl, es, en, pt
+      language=gl, es, en, pt, metaromance
       file=path of the file input 
-            parser=path of the parser, or name of the parser generated from grammar
+            parser=path of the parser, or name of the parser generated from grammar (i.e. metaromance)
             grammar=path of the file grammar
          
 "
@@ -83,7 +83,11 @@ if [ "$GRAMMAR" != "" ]; then
         ruby compi-beta.rb $GRAMMAR $PARSER ;
         NAMEPARSER="./$PARSER"
 
-#Lançar o parser especificado no caso de nao haver gramatica
+#Lançar o parser MetaRomance no caso de nao houver gramatica e fosse especificado
+elif [ "$GRAMMAR" == "" ] && [ "$PARSER" == "metaromance" ]; then
+      NAMEPARSER="$DIRPARSER/parserDefault-metaromance"
+     
+#Lançar o parser especificado no caso de nao houver gramatica
 elif [ "$GRAMMAR" == "" ] && [ "$PARSER" != "user_parser" ]; then
       NAMEPARSER="./$PARSER"
       NAMEPARSER=`echo $NAMEPARSER | sed "s/.perl$//" | sed "s/^\.\/\//\//"`
