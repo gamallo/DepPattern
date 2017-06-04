@@ -1,9 +1,9 @@
 # DepPattern parsers (including MetaRomance) and grammar compiler
 
 Author: 
-Pablo Gamallo Otero, Isaac González, Marcos Garcia
-Grupo ProLNat@GE, CiTIUS
-University of Santiago de Compostela
+Pablo Gamallo Otero, Isaac González, Marcos Garcia, 
+Grupo ProLNat@GE, CiTIUS, 
+University of Santiago de Compostela, 
 Galiza
 
 
@@ -43,7 +43,7 @@ deppattern.sh  <type_of_output> <lang> <file> [parser] [grammar]
 ## MetaRomance
 One of the parsers provided by the package is MetaRomance, made of Universal Dependencies for Romance languages, and one of the systems that participated at CoNLL-2017 Shared Task on multilingual dependency parsing. If the input text is in Portuguese, the command to run MetaRomance would be the following:
 
-\.deppattern.sh  -a  pt  ./tests/test-pt  metaromance
+    \.deppattern.sh  -a  pt  ./tests/test-pt  metaromance
 
 More information in:
 Garcia, Marcos and Pablo Gamallo (2017) "A rule-based system for cross-lingual parsing of Romance languages with Universal Dependencies", ConLL-2017, Vancouver, Canada.
