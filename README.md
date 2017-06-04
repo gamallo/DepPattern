@@ -46,6 +46,7 @@ One of the parsers provided by the package is MetaRomance, made of Universal Dep
     \.deppattern.sh  -a  pt  ./tests/test-pt  metaromance
 
 More information in:
+
 Garcia, Marcos and Pablo Gamallo (2017) "A rule-based system for cross-lingual parsing of Romance languages with Universal Dependencies", ConLL-2017, Vancouver, Canada.
 
 
@@ -57,13 +58,14 @@ The input file must be in plain text format, and codified in UTF8.
 The file containing the grammar must be in plain text format. 
 Below, you'll find a toy example of a grammar with 4 dependency-based rules:
 
-###### GRAMMAR #########
 
+###### GRAMMAR #########
+```
 AdjnR:  NOUN  ADJ
 Agr: number, genre
 %
 
-SpecL:  DT  NOUN
+SpecL:  DT  NOUN 
 Agr: number, genre
 %
 
@@ -73,7 +75,7 @@ Agr: number
 
 DobjR:  VERB [ADV]* NOUN
 %
-
+```
 ########### END GRAMMAR ################
 
 Look up the tutorial stored in the doc directory.
@@ -91,10 +93,13 @@ Option -a means that the dp.sh generates a file with a dependency-based analysis
 For instance, the sentence "I am a man." generates the following output:
 
 ################
+```
 SENT::<I_PRO_0_<number:0|lemma:I|possessor:0|case:0|genre:0|person:0|politeness:0|type:P|token:I|> am_VERB_1_<number:0|mode:0|lemma:be|genre:0|tense:0|person:0|type:S|token:am|> a_DT_2_<number:0|lemma:a|possessor:0|genre:0|person:0|type:0|token:a|> man_NOUN_3_<number:S|lemma:man|genre:0|person:3|type:C|token:man|> ._SENT>
+
 (Lobj;be_VERBF_1;I_PN_0)
 (Spec;man_NOM_3;a_DT_2)
 (Robj;be_VERBF_1;man_NOM_3)
+```
 ################
 
 The set of dependency relationships used by the 5 grammars can be consulted and modified in the corresponding configuration file: src/dependencies.conf.
