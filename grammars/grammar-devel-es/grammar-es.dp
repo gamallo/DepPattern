@@ -93,7 +93,7 @@ PunctL: Fc CONJ<coord:adv>
 AdjnL: ADV<lemma:$Quant> ADV|ADJ
 %
 
-AdjnL: ADV<lemma:[Mm]ais@de> [DET]? CARD|NOUN
+AdjnL: ADV<lemma:[Mm]ais\@de> [DET]? CARD|NOUN
 %
 
 ###dous termos sem AND:
@@ -127,8 +127,8 @@ PunctL: Fc CONJ<coord:adj>
 
 
 ##antes de tratar o NOUN+ADJ como Adjn, hai que tratar os predicativos de objecto directo (problemas: "tengo la pierna cansada" ; "tengo un coche rojo" 
-#AtrR: VERB<lemma:$SubcatODirAtr>  [DET]? [NOUN] ADJ|CONJ<coord:adj>|VERB<mode:P>
-#%
+####AtrR: VERB<lemma:$SubcatODirAtr>  [DET]? [NOUN] ADJ|CONJ<coord:adj>|VERB<mode:P>
+###%
 
 
 #################FRASE SUSTANTIVA#####################################

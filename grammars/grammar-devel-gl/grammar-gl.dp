@@ -71,7 +71,7 @@ PunctL: Fc CONJ<coord:adv>
 AdjnL: ADV<lemma:$Quant> ADV|ADJ
 %
 
-AdjnL: ADV<lemma:[Mm]ais@de> [DET]? CARD|NOUN
+AdjnL: ADV<lemma:[Mm]ais\@de> [DET]? CARD|NOUN
 %
 
 ###dous termos sem AND:
@@ -256,7 +256,7 @@ Inherit: mode, person, tense, number
 
 #######PERIFRASES
 #verbos modais
-VSpecL: VERB<lemma:$VModalEs> [ADV]* VERB<mode:N>
+VSpecL: VERB<lemma:$VModalES> [ADV]* VERB<mode:N>
 #NoUniq
 Inherit: mode, person, tense, number
 %

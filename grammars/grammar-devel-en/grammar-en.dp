@@ -178,6 +178,8 @@ Agreement: gender, number
 Recursivity: 1
 %
 
+AdjnL: [DET|PRP] VERB<mode:G|P>  NOUN
+%
 
 AdjnR: NOUN [ADV]? ADJ|CONJ<coord:adj>
 Agreement: gender, number
