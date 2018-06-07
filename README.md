@@ -1,6 +1,6 @@
 # DepPattern parsers (including MetaRomance) and grammar compiler
 
-NEW VERSION: 
+Please, go to the NEW VERSION: 
 
 https://github.com/citiususc/DepPattern
 
