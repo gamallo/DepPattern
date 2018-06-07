@@ -1,5 +1,9 @@
 # DepPattern parsers (including MetaRomance) and grammar compiler
 
+NEW VERSION: 
+
+https://github.com/citiususc/DepPattern
+
 Author: 
 Pablo Gamallo Otero, Isaac González, Marcos Garcia, 
 Grupo ProLNat@GE, CiTIUS, 
